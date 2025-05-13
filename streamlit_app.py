@@ -73,7 +73,7 @@ top_airline = filtered_data['Airline'].value_counts().idxmax()
 card1.metric("Flight Count", f"{flight_count}")
 card2.metric("Highest Price", f"{highest_Price}")
 card3.metric("Lowest Price", f"{lowest_Price}")
-card4.metric("Top Airlinee", f"{top_airline}")
+card4.metric("Top Airline", f"{top_airline}")
 
 #-------------------------------------------------------
 # Dashboard Tabs
