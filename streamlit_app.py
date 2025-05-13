@@ -90,3 +90,63 @@ with tab1:
    
     im1 = Image.open('R.jpg')
     st.image(im1)
+
+#----------------------------------
+# predicting Model
+with tab3:
+
+    model = joblib.load('aviation_flight_fare_prediction_model.p')    
+
+    # Inputs 
+    col1, col2 = st.columns((5,5))
+    with col1:
+        airline_pred_raw = st.selectbox("Airline Carrier", list(df['Airline'].unique()))
+        source_pred_raw= st.selectbox("Departure City", list(df['Source'].unique()))            
+        destination_pred_raw = st.selectbox("Arrival City", list(df['Source'].unique())) 
+        stops_pred= int(st.selectbox("Stops", options= df['Total_Stops'].unique()))
+        duration_value =int(st.number_input("Flight Duration (in minutes)",
+                                                                    min_value=0, step=10))
+    
+        
+    
+    with col2:
+                
+        add_info_pred= st.selectbox("Additional Services", list(df['Additional_Info'].unique()))
+        
+        # day_pred= int(st.selectbox("Day", options= df['Day'].unique()))
+        # month_pred= int(st.selectbox("Month", options= df['Month'].unique()))
+
+        # Date Selection
+        today = date.today()
+        min_date = today + pd.DateOffset(days=1)
+        max_date = today + pd.DateOffset(months=6)
+        selected_date = st.date_input('Select a date', min_value=min_date, max_value=max_date, value=min_date)
+
+        st.write(' ')
+        st.write(' ')
+        st.write('for Departure Hour, If the minutes more than 30, Please increase the hour by 1')
+        
+        dep_hour_value = int(st.number_input("Departure Hour (24 format)",
+                                                                    min_value=0))
+
+
+    input_data = pd.DataFrame([{
+    'Airline': airline_pred_raw,
+    'Source': source_pred_raw,
+    'Destination': destination_pred_raw,
+    'Additional_Info': add_info_pred_raw,
+    'Total_Stops': stops_pred,
+    'Duration': duration_value,
+    'Day': selected_date.day,
+    'Month': selected_date.month,
+    'Dep_Hour': dep_hour_value
+}])
+    
+    # Submit Button
+    if st.button("Submit 👇"):
+        Price = model.predict(input_data)
+        # Display the price as a metric
+        st.metric("Ticket Price", int(Price))
+
+
+
