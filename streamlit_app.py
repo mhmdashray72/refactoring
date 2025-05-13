@@ -63,4 +63,15 @@ filtered_data = filter(airline, source, destination, add_info)
 # Information Cards
 card1, card2, card3, card4 = st.columns((2,2,2,4))
 
+# Cards Values
+flight_count = filtered_data['Airline'].count()
+highest_Price = filtered_data['Price'].max()
+lowest_Price = filtered_data['Price'].min()
+top_airline = filtered_data['Airline'].value_counts().idxmax()
+
+# Show The Cards
+card1.metric("Flight Count", f"{flight_count}")
+card2.metric("Highest Price", f"{highest_Price}")
+card3.metric("Lowest Price", f"{lowest_Price}")
+card4.metric("Top Airline", f"{top_airline}")
 
