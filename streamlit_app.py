@@ -92,8 +92,9 @@ with tab1:
     st.image(im1)
 
 #----------------------------------
-
-visual1, visual2 = st.columns((5, 5))
+with tab2:
+   
+    visual1, visual2 = st.columns((5, 5))
     with visual1:
         st.subheader('Top Airlines')
         most_airline = filtered_data['Airline'].value_counts().sort_values(ascending=False).head()
