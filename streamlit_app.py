@@ -259,5 +259,6 @@ These insights suggest that duration and the number of stops are stronger driver
 
 # predicting Model
 with tab3:
+    pass
 
    
