@@ -114,13 +114,8 @@ with tab3:
         add_info_pred_raw= st.selectbox("Additional Services", list(df['Additional_Info'].unique()))
         
         # day_pred= int(st.selectbox("Day", options= df['Day'].unique()))
-        # month_pred= int(st.selectbox("Month", options= df['Month'].unique()))
-
         # Date Selection
-        today = date.today()
-        min_date = today + pd.DateOffset(days=1)
-        max_date = today + pd.DateOffset(months=6)
-        selected_date = st.date_input('Select a date', min_value=min_date, max_value=max_date, value=min_date)
+        selected_date = st.date_input('Select a date')
 
         st.write(' ')
         st.write(' ')
