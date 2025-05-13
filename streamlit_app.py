@@ -111,7 +111,7 @@ with tab3:
     
     with col2:
                 
-        add_info_pred= st.selectbox("Additional Services", list(df['Additional_Info'].unique()))
+        add_info_pred_raw= st.selectbox("Additional Services", list(df['Additional_Info'].unique()))
         
         # day_pred= int(st.selectbox("Day", options= df['Day'].unique()))
         # month_pred= int(st.selectbox("Month", options= df['Month'].unique()))
