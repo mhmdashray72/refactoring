@@ -54,3 +54,13 @@ def filter(airline, source, destination, add_info):
 
     return filtered_data
 
+#------------------------------
+
+
+# Filtered DataFrame
+filtered_data = filter(airline, source, destination, add_info)
+
+# Information Cards
+card1, card2, card3, card4 = st.columns((2,2,2,4))
+
+
