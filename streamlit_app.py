@@ -78,3 +78,15 @@ card4.metric("Top Airline", f"{top_airline}")
 #-------------------------------------------------------
 # Dashboard Tabs
 tab1, tab2, tab3 = st.tabs(["🏠 Home", "📈 Insights", "🤖 Prediction"])
+
+# introduction
+with tab1:
+    st.write("If you are a traveler looking to plan your next trip, or you are an airline or travel agency, "
+         "you need to know about ticket and service price variations.\n"
+         "Airline ticket pricing has become increasingly complex due to factors such as demand fluctuations and seasonal trends.\n"
+         "\n"
+         "My project aims to help you make the right decision and buy the best ticket at the best price by developing a predictive model "
+         "that can accurately estimate flight fares based on the given features.")
+   
+    im1 = Image.open('R.jpg')
+    st.image(im1)
