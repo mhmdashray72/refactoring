@@ -25,9 +25,22 @@ with st.sidebar:
     
     data = df.copy()
     source = st.sidebar.selectbox("Departure City", ['All'] + list(data['Source'].unique()))
+    # data after Source selection
+    if source != 'All':
+        data = data[data['Source'] == source]
+    
     destination = st.sidebar.selectbox("Arrival City", ['All'] + list(data['Destination'].unique()))
+    # data after Source and Destination selection
+    if destination != 'All':
+        data = data[data['Destination'] == destination]
+
     duration = data[(data['Source'] == source) & (data['Destination'] == destination)]
+    
     airline = st.sidebar.selectbox("Airline Carrier", ['All'] + list(data['Airline'].unique()))
+    # data after Source and Destination and Month and Day selection and departure hour selection and airline selection
+    if airline != 'All':
+        data = data[data['Airline'] == airline]
+
     add_info = st.sidebar.selectbox("Additional Services", ['All'] + list(data['Additional_Info'].unique()))
 
     st.sidebar.write("")
