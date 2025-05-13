@@ -121,8 +121,7 @@ with tab2:
     st.subheader('Duration vs Price')
     fig = px.scatter(filtered_data,
                     x='Duration',
-                    y='Price',
-                    color=filter_box,
+                    y='Price'
                     )
     # Customize x-axis and y-axis labels
     fig.update_xaxes(title='Duration')
