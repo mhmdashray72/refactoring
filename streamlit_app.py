@@ -260,7 +260,7 @@ These insights suggest that duration and the number of stops are stronger driver
 # predicting Model
 with tab3:
 
-   # model = joblib.load('aviation_flight_fare_prediction_model.p')    
+    model = joblib.load('aviation_flight_fare_prediction_model.p')    
     sc = StandardScaler()
 
     # Inputs 
@@ -315,8 +315,8 @@ with tab3:
                                 dep_hour_pred_scaled[0][0], airline_pred, source_pred,
                                   destination_pred, add_info_pred]])
 
-        #Price = model.predict(input_data)
+        Price = model.predict(input_data)
         # Display the price as a metric
-        #st.metric("Ticket Price", int(Price))
+        st.metric("Ticket Price", int(Price))
 
    
