@@ -75,3 +75,6 @@ card2.metric("Highest Price", f"{highest_Price}")
 card3.metric("Lowest Price", f"{lowest_Price}")
 card4.metric("Top Airline", f"{top_airline}")
 
+#-------------------------------------------------------
+# Dashboard Tabs
+tab1, tab2, tab3 = st.tabs(["🏠 Home", "📈 Insights", "🤖 Prediction"])
