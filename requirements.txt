@@ -1,6 +1,6 @@
 streamlit
 joblib
-numpy
+numpy==1.24.3
 pandas
 Pillow
 plotly
